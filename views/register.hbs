@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    {{> setstyle}}
+</head>
+<body>
+    {{> navbar}}
+    <div class="container">
+        <div class="text">Registeration</div>
+        <form action="/auth/register" method="post" autocomplete="off">
+            <div class="data">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="data">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="data">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="data">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <div class="data">
+                <label for="Secret">Secret</label>
+                <input type="text" name="secret" id="secret" required>
+            </div>
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <div class="btn">
+                <button type="submit">Register Now</button>
+            </div>
+            <div class="signup">
+                Already a member? <a href="/">Login Now</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

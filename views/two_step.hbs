@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    {{> setstyle}}
+</head>
+<body>
+    {{> navbar}}
+    <div class="container">
+        <div class="text">Two-Step Verification</div>
+        <form action="/auth/two_step" method="post" autocomplete="off">
+            <div class="data">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="data">
+                <label for="email">Secret</label>
+                <input type="text" name="secret" id="secret">
+            </div>
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <div class="btn">
+                <button type="submit">Cehck now</button>
+            </div>
+            <div class="signup">
+                <a href="/login">Back</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

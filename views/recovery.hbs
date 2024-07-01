@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    {{> setstyle}}
+</head>
+<body>
+    {{> navbar}}
+    <div class="container">
+        <div class="text">Password Change</div>
+        <form action="/auth/recovery" method="post" autocomplete="off">
+            <div class="data">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="data">
+                <label for="password">New Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="data">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            {{#if msg}}
+            <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <div class="btn">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
